@@ -1,0 +1,125 @@
+@import 'colors';
+
+.FeedBackBtn {
+    background: inherit;
+    color: $color-accent;
+    border: 0.25em solid $color-accent;
+    padding: 0.938em 1.688em;
+    font-size: 0.875em; 
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+        &:hover {
+        background-color: $color-accent;
+        color: $color-secondary;
+        }
+    
+}
+
+.Overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 99;   
+}
+
+.Modal {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 800px;
+  max-height: 1000px;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+
+  svg {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 24px;
+    width: 24px;
+    opacity: 0.3;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// styles for Form
+
+.ContactForm {
+    padding: 40px;
+
+    h2 {
+        color: #3e444f;
+        font-weight: bold;
+        font-size: 1.7em;
+        margin-bottom: 20px;
+    }
+
+    p {
+        color: #3e444f;
+        font-size: 1.2em;
+        line-height: 30px;
+        margin-bottom: 20px;
+    }
+
+
+    input {
+        padding: 1rem;
+        border: none;
+        border-bottom: 3px solid #0f0f0f1a;
+        margin-bottom: 1.5rem;
+        &:nth-child(3) {
+            width: 100%;
+        }
+        &::placeholder {
+            color: rgba(15, 15, 15, 0.3);
+            font-size: 1.1rem;
+        }
+    }
+    button {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        background: #fff;
+        border: 4px solid #3e444f;
+        color: #3e444f;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        font-weight: bold;
+        &:disabled {
+            cursor: not-allowed;
+        }
+
+        &:hover {
+            background-color: #3e444f;
+            color:#fff;
+        }
+    }
+}
+
+.valid {
+    border-color: #2ba008 !important;
+}
+
+.invalid {
+    border-color: #b30000 !important;
+}
+
+
+@media (max-width: 1000px) {
+    .FeedBackBtn {
+        padding: 0.6em 1.2em;
+        font-size: 0.7em;
+    }
+}

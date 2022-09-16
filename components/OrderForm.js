@@ -1,11 +1,9 @@
-import { useState } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from 'react';
+import styles from '/styles/OrderForm.module.scss';
 import Image from 'next/image';
-import styles from '/styles/FeedBackBtn.module.scss';
-
 import img from '../public/img/phone.jpg';
 
-const FeedBackForm = () => {
+export default function FeedBackForm({ showForm, clickHandler, orderIndex, orderData }) {
     const [contactName, setContactName] = useState('');
     const [contactDetail, setContactDetail] = useState('');
 
@@ -97,7 +95,7 @@ const FeedBackForm = () => {
     const { textName, textContact, textSend } = contactContent;
 
     return (
-        <div className={styles.Overlay}>
+        <div className={styles.Overlay} style={{ display: showForm ? 'block' : 'none' }}>
             <div className={styles.Modal}>
                 <div className={styles.ContactContent}>
                     <form className={styles.ContactForm}>
@@ -121,30 +119,37 @@ const FeedBackForm = () => {
                             required
                             className={contactStyles}
                         />
+                        {orderData.map((order, index) => {
+                            return (
+                                <div key={index}>
+                                    <input
+                                        id={order.id}
+                                        type="checkbox"
+                                        value={contactDetail}
+                                        onChange={contactHandler}
+                                        placeholder={textContact}
+                                        required
+                                        className={contactStyles}
+                                        checked={index == orderIndex}
+                                        onClick={() => clickHandler(index)}
+                                    />
+                                    <label htmlFor="scaffold">{order.name}</label>
+                                </div>
+                            );
+                        })}
+
                         <button type="submit" disabled={isFormValid ? false : true}>
                             {textSend}
                         </button>
                     </form>
                 </div>
                 <Image src={img} width={300} height={400} />
-
-                <svg height="200" viewBox="0 0 200 200" width="200">
-                    <path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z" />
-                </svg>
+                <button onClick={clickHandler}>
+                    <svg height="200" viewBox="0 0 200 200" width="200">
+                        <path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z" />
+                    </svg>
+                </button>
             </div>
         </div>
-    );
-};
-
-export default function FeedBackBtn({ name }) {
-    const [showFBForm, setShowFBForm] = useState(false);
-
-    return (
-        <>
-            <button onClick={() => setShowFBForm(true)} className={styles.FeedBackBtn}>
-                {name}
-            </button>
-            {showFBForm && <FeedBackForm />}
-        </>
     );
 }

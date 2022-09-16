@@ -1,0 +1,105 @@
+@import 'colors';
+
+.Overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 99;   
+}
+
+.Modal {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 800px;
+  max-height: 1000px;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+
+  svg {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 24px;
+    width: 24px;
+    opacity: 0.3;
+    cursor: pointer;
+    fill: #3e444f;
+    stroke: #3e444f;
+    
+    
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// styles for Form
+
+.ContactForm {
+    padding: 40px;
+    color: #3e444f;
+
+
+    h2 {    
+        font-weight: bold;
+        font-size: 1.7em;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1.2em;
+        line-height: 30px;
+        margin-bottom: 20px;
+    }
+
+
+    input {
+        padding: 1rem;
+        border: none;
+        border-bottom: 3px solid #0f0f0f1a;
+        margin-bottom: 1.5rem;
+        &:nth-child(3) {
+            width: 100%;
+        }
+        &::placeholder {
+            color: rgba(15, 15, 15, 0.3);
+            font-size: 1.1rem;
+        }
+    }
+    button {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        background: #fff;
+        border: 4px solid #3e444f;
+        color: #3e444f;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        font-weight: bold;
+        &:disabled {
+            cursor: not-allowed;
+        }
+
+        &:hover {
+            background-color: #3e444f;
+            color:#fff;
+        }
+    }
+}
+
+.valid {
+    border-color: #2ba008 !important;
+}
+
+.invalid {
+    border-color: #b30000 !important;
+}

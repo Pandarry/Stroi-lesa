@@ -1,0 +1,57 @@
+@import 'colors';
+
+.ImageSlider {
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+        border: none;
+        background-color: inherit;
+        svg {
+            fill: #ffffff;
+            width: 30px;
+            height: auto;
+            &:hover {
+                fill: $color-accent;
+            }       
+        }
+    }
+
+    p {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        top	: 0;
+        left: 0;
+        width: 100%;
+        font-weight: 800;
+        font-size: 1.3em;
+        color: #2d545e;
+        background: rgba(255, 255, 255, 0.54);        
+    }
+
+    img {
+        width: 200px;
+        height: 500px;
+        object-fit: cover;
+    }
+}
+
+.LeftArrow {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    font-size: 2rem;
+}
+
+.RightArrow {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    font-size: 2rem;
+}

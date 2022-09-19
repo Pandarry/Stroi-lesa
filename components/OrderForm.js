@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import axios from 'axios';
 import styles from '/styles/OrderForm.module.scss';
-import Image from 'next/image';
-import img from '../public/img/phone.jpg';
 
-export default function FeedBackForm({ showForm, clickHandler, orderIndex, orderData }) {
+export default function FeedBackForm({ showForm, clickHandler, orderData }) {
     const [contactName, setContactName] = useState('');
     const [contactDetail, setContactDetail] = useState('');
+    const [checked, setChecked] = useState();
 
     const [isNameValid, setNameValid] = useState('neutral');
     const [isContactValid, setContactValid] = useState('neutral');
@@ -31,6 +31,10 @@ export default function FeedBackForm({ showForm, clickHandler, orderIndex, order
         }
         setContactDetail(e.target.value);
     };
+
+    // const orderHandler = (e) => {
+    //     setChecked(e.target.value);
+    // };
 
     let isFormValid = false;
     if (isNameValid == 'valid' && isContactValid == 'valid') {
@@ -63,28 +67,28 @@ export default function FeedBackForm({ showForm, clickHandler, orderIndex, order
             break;
     }
 
-    // const sendMail = async (e) => {
-    //     e.preventDefault()
+    const sendMail = async (e) => {
+        e.preventDefault();
 
-    //     if (isFormValid) {
-    //         axios.post('/api/email', {
-    //             contactName,
-    //             contactDetail,
-    //             contactMessage
-    //         })
-    //             .then((res) => {
-    //                 alert('Thank you! your request has been sent')
-    //                 setContactName('')
-    //                 setContactDetail('')
-    //                 setContactMessage('')
-    //             }
-    //             ).catch(
-    //                 (e) => console.log(e)
-    //             )
-    //     } else {
-    //         console.log('Form is not valid')
-    //     }
-    // }
+        if (isFormValid) {
+            axios
+                .post('/api/email', {
+                    contactName,
+                    contactDetail,
+                    checked,
+                })
+                .then((res) => {
+                    alert('Спасибо! Мы получили вашу заявку');
+                    setContactName('');
+                    setContactDetail('');
+                    setChecked('');
+                    console.log(contactName, contactDetail, checked);
+                })
+                .catch((e) => console.log(e));
+        } else {
+            console.log('Form is not valid');
+        }
+    };
 
     const contactContent = {
         textName: 'Имя',
@@ -98,7 +102,7 @@ export default function FeedBackForm({ showForm, clickHandler, orderIndex, order
         <div className={styles.Overlay} style={{ display: showForm ? 'block' : 'none' }}>
             <div className={styles.Modal}>
                 <div className={styles.ContactContent}>
-                    <form className={styles.ContactForm}>
+                    <form className={styles.ContactForm} onSubmit={sendMail}>
                         <h2>Свяжитесь с нами</h2>
                         <p>И мы ответим на все Ваши вопросы и поможем решить проблему.</p>
                         <input
@@ -121,29 +125,29 @@ export default function FeedBackForm({ showForm, clickHandler, orderIndex, order
                         />
                         {orderData.map((order, index) => {
                             return (
-                                <div key={index}>
-                                    <input
-                                        id={order.id}
-                                        type="checkbox"
-                                        value={contactDetail}
-                                        onChange={contactHandler}
-                                        placeholder={textContact}
-                                        required
-                                        className={contactStyles}
-                                        checked={index == orderIndex}
-                                        onClick={() => clickHandler(index)}
-                                    />
-                                    <label htmlFor="scaffold">{order.name}</label>
+                                <div key={index} className={styles.CheckBox}>
+                                    <div className={styles.CheckBoxWrapper}>
+                                        <input
+                                            id={order.id}
+                                            type="checkbox"
+                                            value={order}
+                                            onChange={() => setChecked(order.name)}
+                                        />
+                                        <label htmlFor={order.id}>{order.name}</label>
+                                    </div>
                                 </div>
                             );
                         })}
 
-                        <button type="submit" disabled={isFormValid ? false : true}>
+                        <button
+                            type="submit"
+                            disabled={isFormValid ? false : true}
+                            onClick={clickHandler}>
                             {textSend}
                         </button>
                     </form>
                 </div>
-                <Image src={img} width={300} height={400} />
+
                 <button onClick={clickHandler}>
                     <svg height="200" viewBox="0 0 200 200" width="200">
                         <path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z" />

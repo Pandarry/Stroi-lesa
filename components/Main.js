@@ -5,6 +5,7 @@ import styles from '/styles/Main.module.scss';
 
 import img from '../public/img/about.jpg';
 import deliveryImg from '../public/img/delivery.jpg';
+
 import ImageSlider from './ImageSlider';
 import OrderForm from './OrderForm';
 import logo from '../public/img/logo.png';
@@ -16,52 +17,71 @@ export default function Main() {
         {
             name: 'Строительные леса',
             id: 'scaffold',
-            checked: false,
+
             description:
                 'Это профессиональное оборудование, которое ставится и используется рабочими для возведения стен или их покраски, ремонта, установки, штукатурки.',
         },
         {
             name: 'Телескопические стойки',
             id: 'stoiki',
-            checked: false,
+
             description:
                 'Это несущий элемент опалубки перекрытий. С ее помощью строят монолитные перекрытия высотой до 5,5 метров. Телескопические стойки для опалубки удерживают ее в статичном положении.',
         },
         {
             name: 'Струбцина',
             id: 'strubtsina',
-            checked: false,
+
             description:
                 'Струбцина – это конструкция, которая служит для того чтобы закрепить детали к нужной поверхности или плотно прижать их между собой, например, при сварке либо склеивании.',
         },
         {
             name: 'Домкраты',
             id: 'domkraty',
-            checked: false,
+
             description:
                 'Домкрат - это механическое устройство для подъёма, перемещения и удержания грузов.',
         },
     ]);
 
     function clickHandler(index) {
-        if (index) {
-            setOrderIndex(index);
-        } else {
-            setShowFBForm((prev) => !prev);
-        }
+        setShowFBForm((prev) => !prev);
     }
 
-    function FeedBackBtn({ style, title, data, index }) {
-        if (data) {
+    function FeedBackBtn({ style, title, header, text, children }) {
+        if (style) {
             return (
-                <button onClick={index ? () => clickHandler(index) : clickHandler}>
-                    <h2>{data.name}</h2>
-                    <p>{data.description}</p>
+                <button onClick={clickHandler} className={styles.FeedBackBtn}>
+                    {title}
+                </button>
+            );
+        } else {
+            return (
+                <button onClick={clickHandler} className={styles.OrderBtn}>
+                    <h2>{header}</h2>
+                    <p>{text}</p>
                 </button>
             );
         }
-        return <button onClick={clickHandler}>{title}</button>;
     }
+
+    // function FeedBackBtn({ title, data, index }) {
+    //     if (data) {
+    //         return (
+    //             <button
+    //                 onClick={index ? () => clickHandler(index) : clickHandler}
+    //                 className={styles.OrderBtn}>
+    //                 <h2>{data.name}</h2>
+    //                 <p>{data.description}</p>
+    //             </button>
+    //         );
+    //     }
+    //     return (
+    //         <button onClick={clickHandler} className={styles.FeedBackBtn}>
+    //             {title}
+    //         </button>
+    //     );
+    // }
 
     return (
         <>
@@ -103,7 +123,7 @@ export default function Main() {
                                     </li>
                                 </ul>
                             </div>
-                            <FeedBackBtn title="Заказать звонок" />
+                            <FeedBackBtn title="Заказать звонок" style={true} />
                         </div>
                     </div>
                 </div>
@@ -218,9 +238,43 @@ export default function Main() {
                     <div className={styles.Wrapper}>
                         <h1>Товары</h1>
                         <div className={styles.Products}>
-                            {orderData.map((order, index) => (
-                                <FeedBackBtn data={order} key={index} index={index} />
-                            ))}
+                            <div className={styles.ProductsList}>
+                                <ImageSlider product="lesa" />
+                                <FeedBackBtn
+                                    style={null}
+                                    header="Строительные леса"
+                                    text="Это профессиональное оборудование, которое ставится и используется рабочими для возведения стен или их покраски, ремонта, установки, штукатурки."
+                                />
+                            </div>
+                            <div className={styles.ProductsList}>
+                                <ImageSlider product="stoiki" />
+                                <FeedBackBtn
+                                    style={null}
+                                    header="Телескопические стойки"
+                                    text="Это несущий элемент опалубки перекрытий. С ее помощью строят монолитные перекрытия высотой до 5,5 метров. Телескопические стойки для опалубки удерживают ее в статичном положении."
+                                />
+                            </div>
+                            <div className={styles.ProductsList}>
+                                <ImageSlider product="strubtsina" />
+                                <FeedBackBtn
+                                    style={null}
+                                    header="Струбцина"
+                                    text="Струбцина – это конструкция, которая служит для того чтобы закрепить детали к нужной поверхности или плотно прижать их между собой, например, при сварке либо склеивании."
+                                />
+                            </div>
+                            <div className={styles.ProductsList}>
+                                <ImageSlider product="domkraty" />
+                                <FeedBackBtn
+                                    style={null}
+                                    header="Домкраты"
+                                    text="Домкрат - это механическое устройство для подъёма, перемещения и удержания грузов."
+                                />
+                            </div>
+                            {/* {orderData.map((order, index) => (
+                                <div className={styles.ProductsList} key={index}>
+                                    <FeedBackBtn data={order} index={index} />
+                                </div>
+                            ))} */}
                         </div>
                     </div>
                 </section>
@@ -242,7 +296,7 @@ export default function Main() {
                                         <li>Недорого</li>
                                     </ul>
                                     <div className={styles.ServicesBtnBlock}>
-                                        <FeedBackBtn title="Оставить заявку" />
+                                        <FeedBackBtn title="Оставить заявку" style={true} />
                                     </div>
                                 </div>
 

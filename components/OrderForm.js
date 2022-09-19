@@ -5,7 +5,7 @@ import styles from '/styles/OrderForm.module.scss';
 export default function FeedBackForm({ showForm, clickHandler, orderData }) {
     const [contactName, setContactName] = useState('');
     const [contactDetail, setContactDetail] = useState('');
-    const [checked, setChecked] = useState();
+    const [checked, setChecked] = useState([]);
 
     const [isNameValid, setNameValid] = useState('neutral');
     const [isContactValid, setContactValid] = useState('neutral');
@@ -32,9 +32,28 @@ export default function FeedBackForm({ showForm, clickHandler, orderData }) {
         setContactDetail(e.target.value);
     };
 
-    // const orderHandler = (e) => {
-    //     setChecked(e.target.value);
-    // };
+    const ordersHandler = (e) => {
+        if (e.target.checked == true) {
+            if (checked.length == 0) {
+                let array = [...checked]
+                array.push(e.target.value)
+                setChecked(array)
+            } else {
+                checked.filter((name) => {
+                    if (name !== e.target.value) {
+                        let array = [...checked]
+                        array.push(e.target.value)
+                        setChecked(array)
+                    }
+                })
+            }
+        } else {
+            let index = checked.indexOf(e.target.value)
+            let array = [...checked]
+            array.splice(index, 1)
+            setChecked(array)
+        }
+    };
 
     let isFormValid = false;
     if (isNameValid == 'valid' && isContactValid == 'valid') {
@@ -69,6 +88,7 @@ export default function FeedBackForm({ showForm, clickHandler, orderData }) {
 
     const sendMail = async (e) => {
         e.preventDefault();
+        console.log(contactName + " " + contactDetail + " " + checked)
 
         if (isFormValid) {
             axios
@@ -81,7 +101,7 @@ export default function FeedBackForm({ showForm, clickHandler, orderData }) {
                     alert('Спасибо! Мы получили вашу заявку');
                     setContactName('');
                     setContactDetail('');
-                    setChecked('');
+                    setChecked([]);
                     console.log(contactName, contactDetail, checked);
                 })
                 .catch((e) => console.log(e));
@@ -130,8 +150,8 @@ export default function FeedBackForm({ showForm, clickHandler, orderData }) {
                                         <input
                                             id={order.id}
                                             type="checkbox"
-                                            value={order}
-                                            onChange={() => setChecked(order.name)}
+                                            value={order.name}
+                                            onChange={ordersHandler}
                                         />
                                         <label htmlFor={order.id}>{order.name}</label>
                                     </div>

@@ -7,19 +7,19 @@ export default function SendMail(req, res) {
         port: 465,
         host: 'smtp.mail.ru',
         auth: {
-            user: process.env.EMAIL,
-            pass: process.env.EMAIL_PASS,
+            user: 'mr.zxc1992@bk.ru',
+            pass: 'sxVgr7ncdda8UmRZe9x6',
         },
     });
 
     const mailOption = {
-        from: process.env.EMAIL,
-        to: 'beka-ajiotaj@mail.ru',
+        from: 'mr.zxc1992@bk.ru',
+        to: 'dchtole@gmail.com',
         subject: 'Заявка на консультацию',
         text: `
         Имя: ${contactName}
         Контактные данные: ${contactDetail}
-        Товар: ${checked}        `,
+        Товар: ${checked}`,
     };
 
     transporter.sendMail(mailOption, (err, data) => {

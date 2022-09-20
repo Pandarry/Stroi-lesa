@@ -75,8 +75,8 @@
 @media (max-width: 1170px) {
     .ImageSlider {
         img {
-            width: 400px;
-            height: 400px;
+            width: 450px;
+            height: 420px;
         }
     }
 
@@ -84,6 +84,23 @@
     .LeftArrow {left: 1.2em;}
 }
 
+@media (max-width: 992px) {
+    .ImageSlider {
+        button {
+            width: 32px;
+            height: 32px;
+            border-radius: 32px;
+            border: 2px solid $color-accent;
+        }
+        button::after {
+            content: "\279C";
+            font-size: 18px;
+        }
+    }
+    .RightArrow {right: 0.6em;}
+    .LeftArrow {left: 0.6em;}
+
+}
 
 
 @media (max-width: 880px) {
@@ -147,8 +164,32 @@
 @media (max-width: 612px) {
     .ImageSlider {
         img {
-            width: 450px;
-            height: 450px;
+            width: 400px;
+            height: 400px;
         }
     }
+    .RightArrow {right: 1.5em;}
+    .LeftArrow {left: 1.5em;}
+}
+
+@media (max-width: 480px) {
+    .ImageSlider {
+        img {
+            width: 370px;
+            height: 390px;
+        }
+    }
+    .RightArrow {right: 1.1em;}
+    .LeftArrow {left: 1.1em;}
+}
+
+@media (max-width: 360px) {
+    .ImageSlider {
+        img {
+            width: 300px;
+            height: 320px;
+        }
+    }
+    .RightArrow {right: 0.5em;}
+    .LeftArrow {left: 0.5em;}
 }

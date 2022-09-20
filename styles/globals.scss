@@ -39,6 +39,12 @@ body {
     }
 }
 
+@media (max-width: 360px) {
+    body {
+        font-size: 10px;
+    }
+}
+
 
 
 a {

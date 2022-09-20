@@ -35,23 +35,23 @@ export default function FeedBackForm({ showForm, clickHandler, orderData }) {
     const ordersHandler = (e) => {
         if (e.target.checked == true) {
             if (checked.length == 0) {
-                let array = [...checked]
-                array.push(e.target.value)
-                setChecked(array)
+                let array = [...checked];
+                array.push(e.target.value);
+                setChecked(array);
             } else {
                 checked.filter((name) => {
                     if (name !== e.target.value) {
-                        let array = [...checked]
-                        array.push(e.target.value)
-                        setChecked(array)
+                        let array = [...checked];
+                        array.push(e.target.value);
+                        setChecked(array);
                     }
-                })
+                });
             }
         } else {
-            let index = checked.indexOf(e.target.value)
-            let array = [...checked]
-            array.splice(index, 1)
-            setChecked(array)
+            let index = checked.indexOf(e.target.value);
+            let array = [...checked];
+            array.splice(index, 1);
+            setChecked(array);
         }
     };
 
@@ -88,7 +88,7 @@ export default function FeedBackForm({ showForm, clickHandler, orderData }) {
 
     const sendMail = async (e) => {
         e.preventDefault();
-        console.log(contactName + " " + contactDetail + " " + checked)
+        console.log(contactName + ' ' + contactDetail + ' ' + checked);
 
         if (isFormValid) {
             axios

@@ -32,25 +32,7 @@
       button:hover::after {
         color: $color-main;
       }
-  
-    
-    // button {
-    //     border: none;
-    //     background-color: inherit;
-    //     svg {
-    //         border-radius: 50%;
-    //         background: darken(#ffffff, 2%);
-    //         stroke:black;
-    //         fill: #2d545e;
-    //         width: 25px;
-    //         height: auto;
-    //         &:hover {
-    //             fill: $color-accent;
-    //             background: lighten($color-accent, 30%);
-    //         }       
-    //     }
-    // }
-
+     
     p {
         position: absolute;
         display: flex;
@@ -88,4 +70,85 @@
     top: 50%;
     right: 20px;
     font-size: 2rem;
+}
+
+@media (max-width: 1170px) {
+    .ImageSlider {
+        img {
+            width: 400px;
+            height: 400px;
+        }
+    }
+
+    .RightArrow {right: 1.2em;}
+    .LeftArrow {left: 1.2em;}
+}
+
+
+
+@media (max-width: 880px) {
+    .ImageSlider {
+        img {
+            width: 350px;
+            height: 400px;
+        }
+        button {
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            border: 2px solid $color-accent;
+        }
+        button::after {
+            content: "\279C";
+            font-size: 15px;
+        }
+        // p {
+        //     font-size: 20px;
+        // }
+    }
+
+    .RightArrow {right: 0;}
+    .LeftArrow {left: 0;}
+}
+
+@media (max-width: 770px) {
+    .ImageSlider {
+        img {
+            width: 320px;
+            height: 350px;
+        }
+    }  
+}
+
+@media (max-width: 670px) {
+    .ImageSlider {
+        img {
+            width: 280px;
+            height: 320px;
+        }
+        button {
+            width: 24px;
+            height: 24px;
+            border-radius: 24px;
+            border: 2px solid $color-accent;
+        }
+    }
+}
+
+@media (max-width: 660px) {
+    .ImageSlider {
+        img {
+            width: 270px;
+            height: 300px;
+        }
+    }
+}
+
+@media (max-width: 612px) {
+    .ImageSlider {
+        img {
+            width: 450px;
+            height: 450px;
+        }
+    }
 }

@@ -15,11 +15,31 @@ body {
     }
 }
 
-// @media (max-width: 1300px) {
-//     body {
-//         font-size: 14px;
-//     }
-// }
+@media (max-width: 992px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 570px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 11px;
+    }
+}
+
+
 
 a {
     color: inherit;

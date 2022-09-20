@@ -9,44 +9,6 @@ body {
     scroll-behavior:smooth;
 }
 
-@media (max-width: 1300px) {
-    body {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 992px) {
-    body {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 570px) {
-    body {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 11px;
-    }
-}
-
-@media (max-width: 360px) {
-    body {
-        font-size: 10px;
-    }
-}
-
-
-
 a {
     color: inherit;
     text-decoration: none;
@@ -92,3 +54,14 @@ textarea {
     width: 100%;
 }
 
+@media (max-width: 1170px) {
+    .container-flex {
+        padding: 2em;
+    }
+}
+
+@media (max-width: 992px) {
+    .container-flex {
+        padding: 1.5em;
+    }
+}

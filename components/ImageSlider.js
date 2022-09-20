@@ -137,7 +137,7 @@ export default function ImageSlider({ product }) {
 
                 {SlidesOne.map((slide, index) => {
                     return (
-                        <div key={index}>
+                        <div key={index} className={styles.ImgBorder}>
                             {index === current && (
                                 <img src={slide.img} alt={slide.title} loading="lazy" />
                             )}

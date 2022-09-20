@@ -5,6 +5,14 @@
     padding: 1.875em 0;
 }
 
+.Wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+}
+
 .ContactUs {
     padding: 0.625em 0 0.625em 1.25em;
 }
@@ -36,6 +44,9 @@
         flex-direction: column;
         justify-content: space-between;
     }
+    strong {
+        display: none;
+    }
 }
 
 .Social {
@@ -43,8 +54,15 @@
     padding: 0.625em 0 0.625em 1.25em;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     width: 25%;
+    strong {
+        display: none;
+    }
+}
+.LinksWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     svg {
         width: 1.563em;
         height: auto;
@@ -55,12 +73,75 @@
             transform: scale3d(1.1, 1.1, 1.1);
         }
     }
+    p {
+        display: none;
+    }
+
+
+}
+
+@media (max-width: 640px) {
+    .Wrapper {
+        justify-content: space-around;
+       strong {
+        display: contents;
+        color: $color-accent;
+        font-size: 1.1em
+    }
+    }
+    .ContactUs {
+        display: none;
+    }
+    .Social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 160px;
+        border: none;
+        padding: 0;
+
+
+    }
+    .LinksWrapper {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+            display: contents;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        svg {
+            display: none;
+        }
+    }
+
+    .AboutUs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 160px;
+        padding: 0;
+        border: none;
+
+        ul {
+            display: flex;
+            align-items: center;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+    }
 }
 
 @media (max-width: 360px) {
-    .Logo {
-        p {
-            font-size: 1.3em;
+    .Wrapper {
+        padding: 0 1em;
+        strong {
+            font-size: 1em;
         }
     }
 }

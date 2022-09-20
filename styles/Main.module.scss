@@ -5,10 +5,8 @@
 }
 
 .Contacts {
-
     display: flex;
     align-items: center;
-
 }
 
 .LogoBlock {
@@ -75,13 +73,13 @@
 }
 
 .Menu {
-    width: 100%;
-    padding: 0 10em 0 10em;
+    width: 60%;
+    margin: 0 auto;
     font-weight: 700;
 
     ul {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         list-style: none;
     }
 
@@ -121,30 +119,6 @@
         }
 }
 
-@media (max-width: 1260px) {
-    .Header {
-        padding: 0 2em;
-    }
-}
-
-@media (max-width: 850px) {
-    .Social {
-        ul {
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-    }
-}
-
-@media (max-width: 700px) {
-    .LogoContent {
-        p {
-            font-size: 1.3em;
-        }
-    }
-}
-
 .Main {
     h1, h2, h3, p {
         color: #3e444f;
@@ -154,7 +128,7 @@
 .Wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2em 0;
+    padding: 2em;
 }
 
 .CompanyBlock, .ProductsBlock, .ServicesBlock {
@@ -172,6 +146,7 @@
 
 .CompanyBlock, .ServicesBlock {
     background: #F3F3F3;
+    padding-bottom: 2em;
 }
 
 .ProductsBlock {
@@ -191,10 +166,14 @@
     }
 }
 
+.AdvantagesWrapper {
+    margin: 0 auto;
+    width: 80%;   
+}
+
 .AdvantagesBlock {
     display: flex;
-    justify-content: space-between;
-    padding: 1.25em 6.25em 3.125em 6.25em;
+    justify-content: space-between;    
 
     >p {
         font-size: 1.563em;
@@ -203,14 +182,19 @@
 }
 
 .AdvantageBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: #FFFFFF;
     border-radius: 10px;
-    width: 23%;
+    height: 13em;
+    min-width: 13em;
 
     p {
         display: flex;
         justify-content: center;
-        margin-bottom: 1.25em;
+        margin-top: 1em;
         font-weight: 700;
         color: lighten(#3e444f, 10%)
     }
@@ -219,11 +203,11 @@
 .SvgBox {
     display: flex;
     justify-content: center;
-    margin: 2.188em 3.75em 1.25em 3.75em;
-    min-height: 6.25em;
+    align-items: center;  
     border-radius: 10px;
 
     svg {
+        margin: 2em;
         width: 3.125em;
         height: auto;
     }
@@ -278,17 +262,18 @@
 }
 
 .Products {
-    padding: 3.125em 0;
+    padding: 3.125em 0 0 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .ProductsList {
-    display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: nowrap;
     width: 45%;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 
 
@@ -301,7 +286,7 @@
 .ServicesDescr {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 1.25em;
 
     h2 {
@@ -327,276 +312,229 @@
 }
 
 @media (max-width: 1170px) {
-    .OrderBtn {
-        padding: 10px 30px 15px 30px;
-    }
 
-    .ServicesDescr {
-        padding-left: 50px;
-    }
-}
-
-@media (max-width: 1100px) {
-    .SvgBox {
-        margin: 2em 3.3em 1.25em 3.3em;
-    }
-}
-
-@media (max-width: 1000px) {
-
-    .AdvantageBox {
-        p {
-            font-size: 0.9em;
-        }
-    }
-
-    .SvgBox {
-        margin: 2em 2.9em 1.25em 2.9em;
-    }
-
-    .Products {
-        padding: 3em 2em 2em 2em;
-    }
-
-
-    .ServicesItem {
-        padding: 0 1.2em 2em;
-    }
-
-    .ServicesBtnBlock {
+    .AdvantagesWrapper {
         width: 60%;
-        height: 50%;
-        display: flex;
-        flex-direction: column;
     }
 
-    .ServicesDescr {
-        display: flex;
-        justify-content: space-between;
-        padding-left: 20px;
-
-
-        ul,h2,p {
-            margin-bottom: 1em;
-        }
-
-    }
-}
-
-@media (max-width: 950px) {
-    .AboutCompany {
-        p {
-            font-size: 1em;
-            padding: 1.5em 2em;
-        }
+    .AdvantagesBlock {
+        flex-wrap: wrap;
     }
 
     .AdvantageBox {
+        width: 39%;
+        margin-bottom: 2em;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .LogoContent {
         p {
-            font-size: 0.8em;
+            font-size: 1.6em;
+        }
+        :nth-child(2) {
+            font-size: 0.7em;
         }
     }
 
-    .OrderBtn {
-        h2, p {
-            line-height: 1.6em;
+    .Social {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        ul {
+            display: flex;
+            flex-direction: column;
+        }      
+        li {
+            &:not(:last-child) {
+                margin-bottom: 0.5em;
+            }
+        }
+    }
+    .CompanyBlock {
+        padding-bottom: 0;
+    }
+
+    .AboutCompany {
+        padding: 2.5em 0;
+        p {
+            font-size: 1em;
+            max-width: 45%;
+            line-height: 1.8em;
+        }
+    }
+
+    .AdvantagesWrapper {
+        width: 70%;
+    }
+
+
+    .ServicesDescr {
+        padding: 0 1em 0 0;
+        h2 {
+            font-size: 1.4em;
         }
     }
 }
-@media (max-width: 900px) {
 
-    .AdvantagesBlock {
-        padding: 1.25em 4em 3.125em 4em;;
+@media (max-width: 768px) {
+    .FeedBackBtn {
+        padding: 1.1em 1.2em;
+        font-size: 0.7em;
     }
-    .SvgBox {
-        margin: 2em 2.5em 1.25em 2.5em;
-    }
-}
 
-@media (max-width: 830px) {
-    .ServicesBtnBlock {
-        width: 65%;
-        height: 50%;
+    .Social {
+        p {
+            font-size: 0.9em;
+        }
+        li {
+            margin-right: 0.5em;
+        }
+    }
+
+    .AboutCompany {
+        padding: 2.5em 0 2.5em 0;
+    }
+
+    .AdvantagesWrapper {
+        width: 75%;
     }
 
     .ServicesDescr {
-        width: 65%;
-
-        h2 {
-            font-size: 1em;
-        }
-
         p, li {
-            font-size: 0.8em;
-        }
-    }
-
-    .OrderBtn {
-        p {
-            line-height: 1.5em;
             font-size: 0.9em;
         }
-
-        h2 {
-            font-size: 1.2em;
-            line-height: 1.5em;
-        }
-    }
-}
-
-@media (max-width: 725px) {
-
-    .Main {
-        h1 {
-            font-size: 1.5em;
-        }
-    }
-
-    .ServicesBtnBlock {
-        width: 80%;
-        height: 100%;
-    }
-    .AboutCompany {
-        p {
-            padding: 1.5em;
-        }
-    }
-
-    .AdvantagesBlock {
-        padding: 1.25em 1em 3.125em 1em;;
-    }
-
-    .SvgBox {
-        margin: 2em 2em 1.25em 2em;
-    }
-
-    .FeedBackBtn {
-        display: flex;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 645px) {
-    .FeedBackBtn {
-        font-size: 0.6em;
-    }
-
-    .OrderBtn {
-        p {
-            line-height: 1.4em;
-            font-size: 0.8em;
-        }
-
-        h2 {
-            font-size: 1em;
-            line-height: 1.4em;
-        }
-    }
-}
-
-@media (max-width: 610px) {
-
-    .OrderBtn {
-        padding: 10px 30px 15px 30px;
-        p {
-            line-height: 1.5em;
-            font-size: 1em;
-        }
-
-        h2 {
-            font-size: 1.2em;
-            line-height: 1.7em;
-        }
-    }
-
-    .LogoBlock {
-        width: 44%;
     }
 
     .LogoContent {
+        width: 170px;
+        p {
+            font-size: 1.1em;
+        }
         :nth-child(2) {
             font-size: 0.7em;
-            font-weight: 500;
-            display: inline-block;
-            width: 80%;
         }
-
-    }
-    .AdvantageBox {
-        width: 23.6%;
     }
 }
 
-@media (max-width: 610px) {
-    .AdvantageBox {
-        width: 24.5%;
+@media (max-width: 640px) {
+
+    .Social {
+        p  {
+            display: none;
+        }
     }
+    
+    .Menu {
+        width: 70%;
+    }
+
+    .Wrapper {
+        h1 {
+            font-size: 1.6em    ;
+        }
+    }
+
+    .AboutCompany {
+        padding: 0 0 2em 0;
+        flex-direction: column;
+        p {
+            min-width: 100%;
+            margin-bottom: 1em;
+        }
+    }
+    .AdvantagesWrapper {
+        width: 95%;
+    }
+    .AdvantagesBlock {
+        justify-content: center;
+        justify-content: space-between;
+    }
+
+    .AdvantageBox {
+        margin-bottom: 2em;
+        width: 38%;
+    }
+    .ServicesItem {
+        margin-top: 1em;
+        flex-direction: column;
+    }
+
+    .ServicesDescr {
+        padding: 0 0 1em 0;
+        height: 270px;
+        h2 {
+            font-size: 1.2em;
+        }
+    }
+
     .Products {
         flex-direction: column;
         justify-content: center;
+        padding-top: 1.8em;
     }
     .ProductsList {
         width: 100%;
         display: flex;
         justify-content: center;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .OrderBtn {
+        p {
+            line-height: 1.4em;
+            font-size: 1em;
+        }
+
+        h2 {
+            font-size: 1.3em;
+            line-height: 1.5em;
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .LogoBlock {
+        width: 200px;
+    }
+    .LogoContent {
+        width: 200px;
+        p {
+            font-size: 1.1em;
+        }
+        :nth-child(2) {
+            font-size: 0.6em;
+        }
+    }
+    .AdvantagesWrapper {
+        width: 50%;
+    }
+
+    .AdvantageBox {
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .OrderBtn {
-        padding: 10px 25px 15px 25px;
-        p {
-            line-height: 1.5em;
-            font-size: 0.9em;
-        }
-
-        h2 {
-            font-size: 1.2em;
-            line-height: 1.7em;
-        }
+    .Menu {
+        width: 90%;
     }
+    .AdvantagesBlock {
+        justify-content: center;
+    }
+    .ServicesDescr {
+        height: 350px;
+    }
+
 }
 
 @media (max-width: 360px) {
-
-    .LogoBlock {
-        width: 75%;
-    }
-
-    .Social {
+    .AboutCompany {
         p {
-            display: none;
+            font-size: 0.9em;
+            line-height: 1.6em;
         }
-    }
-
-    .Menu {
-        padding: 0;
-    }
-
-    .AdvantagesBlock {
-        flex-wrap: wrap;
-        padding: 0 30px;
-    }
-
-    .AdvantageBox {
-        width: 45%;
-        margin-bottom: 15px;
-    }
-
-    .OrderBtn {
-        padding: 10px 20px 15px 20px;
-        p {
-            line-height: 1.5em;
-            font-size: 0.8em;
-        }
-
-        h2 {
-            font-size: 1.1em;
-            line-height: 1.7em;
-        }
-    }
-
-    .ServicesDescr {
-        width: 120%;
     }
 }

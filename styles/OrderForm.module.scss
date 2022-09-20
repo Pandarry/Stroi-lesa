@@ -71,9 +71,8 @@
         border: none;
         border-bottom: 3px solid #0f0f0f1a;
         margin-bottom: 1rem;
-        &:nth-child(3) {
-            width: 100%;
-        }
+        display: block;
+        width: 100%;
         &::placeholder {
             color: rgba(15, 15, 15, 0.3);
             font-size: 1rem;

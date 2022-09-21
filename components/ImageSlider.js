@@ -130,9 +130,8 @@ export default function ImageSlider({ product }) {
 
     if (product == 'lesa') {
         return (
+          
             <div className={styles.ImageSlider}>
-                <button onClick={prevSlide} className={styles.LeftArrow}></button>
-                <button onClick={nextSlide} className={styles.RightArrow}></button>
 
                 {SlidesOne.map((slide, index) => {
                     return (
@@ -148,14 +147,17 @@ export default function ImageSlider({ product }) {
                         </div>
                     );
                 })}
+                <div className={styles.Arrow}>
+                    <button onClick={prevSlide} className={styles.LeftArrow}></button>
+                    <button onClick={nextSlide} className={styles.RightArrow}></button>
+                </div>
             </div>
+          
         );
     }
     if (product == 'stoiki') {
         return (
             <div className={styles.ImageSlider}>
-                <button onClick={prevSlide2} className={styles.LeftArrow}></button>
-                <button onClick={nextSlide2} className={styles.RightArrow}></button>
 
                 {SlidesTwo.map((slide, index) => {
                     return (
@@ -171,15 +173,16 @@ export default function ImageSlider({ product }) {
                         </div>
                     );
                 })}
+                <div className={styles.Arrow}>
+                    <button onClick={prevSlide2} className={styles.LeftArrow}></button>
+                    <button onClick={nextSlide2} className={styles.RightArrow}></button>
+                </div>
             </div>
         );
     }
     if (product == 'strubtsina') {
         return (
             <div className={styles.ImageSlider}>
-                <button onClick={prevSlide3} className={styles.LeftArrow}></button>
-                <button onClick={nextSlide3} className={styles.RightArrow}></button>
-
                 {SlidesThree.map((slide, index) => {
                     return (
                         <div key={index} className={styles.ImgBorder}>
@@ -194,15 +197,16 @@ export default function ImageSlider({ product }) {
                         </div>
                     );
                 })}
+                <div className={styles.Arrow}>
+                    <button onClick={prevSlide3} className={styles.LeftArrow}></button>
+                    <button onClick={nextSlide3} className={styles.RightArrow}></button>
+                </div>
             </div>
         );
     }
     if (product == 'domkraty') {
         return (
             <div className={styles.ImageSlider}>
-                <button onClick={prevSlide4} className={styles.LeftArrow}></button>
-                <button onClick={nextSlide4} className={styles.RightArrow}></button>
-
                 {SlidesFour.map((slide, index) => {
                     return (
                         <div key={index} className={styles.ImgBorder}>
@@ -217,6 +221,10 @@ export default function ImageSlider({ product }) {
                         </div>
                     );
                 })}
+                <div className={styles.Arrow}>
+                    <button onClick={prevSlide4} className={styles.LeftArrow}></button>
+                    <button onClick={nextSlide4} className={styles.RightArrow}></button>
+                </div>
             </div>
         );
     }

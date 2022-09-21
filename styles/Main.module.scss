@@ -89,6 +89,7 @@
     background: inherit;
     color: $color-accent;
     border: 0.25em solid $color-accent;
+    border-radius: 2px;
     padding: 0.938em 1.688em;
     font-size: 0.875em; 
     font-weight: 800;
@@ -114,13 +115,13 @@
         font-size: 0.95em;
     }
     button {
-        background: #3e444f;
-        border: 1px solid #3e444f;
+        background: #fff;
+        border: 2px solid $color-accent;
         padding: 0.7em 1.7em;
         border-radius: 2px;
         font-size: 1em;
         font-weight: 700;
-        color: #F3F3F3;
+        color: $color-accent;
         transition: all 0.5s ease;
         &:hover {
             background: $color-accent;
@@ -420,7 +421,26 @@
             font-size: 0.7em;
         }
     }
+    .Products {
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 1.8em;
+    }
+    .ProductsList {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
     .OrderBtn {
+        margin: 0;
+        padding: 0 4em;
+ 
+        h2, p {
+            line-height: 1.9em;
+        }
         h2 {
             padding: 10px 0 4px 0;
             line-height: 1.3em;
@@ -478,25 +498,12 @@
             font-size: 1.2em;
         }
     }
-
-    .Products {
-        flex-direction: column;
-        justify-content: center;
-        padding-top: 1.8em;
-    }
-    .ProductsList {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
     .OrderBtn {
-        h2, p {
-            line-height: 1.9em;
-        }
+        padding: 0;
+        margin: 0 auto;
     }
+
+
 }
 
 @media (max-width: 540px) {

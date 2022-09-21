@@ -57,10 +57,13 @@ export default function Main() {
             );
         } else {
             return (
-                <button onClick={clickHandler} className={styles.OrderBtn}>
-                    <h2>{header}</h2>
-                    <p>{text}</p>
-                </button>
+                <div className={styles.OrderBtn}>
+                    <div className={styles.OrderBtnContent}>
+                        <h2>{header}</h2>
+                        <p>{text}</p>
+                    </div>
+                    <button onClick={clickHandler}>Оставить заявку</button>
+                </div>
             );
         }
     }
@@ -248,7 +251,7 @@ export default function Main() {
                                 <FeedBackBtn
                                     style={null}
                                     header="Строительные леса"
-                                    text="Это профессиональное оборудование, которое ставится и используется рабочими для возведения стен или их покраски, ремонта, установки, штукатурки."
+                                    text="Это профессиональное оборудование, которое используется рабочими для возведения стен или их покраски, ремонта, установки, штукатурки."
                                 />
                             </div>
                             <div className={styles.ProductsList}>
@@ -256,7 +259,7 @@ export default function Main() {
                                 <FeedBackBtn
                                     style={null}
                                     header="Телескопические стойки"
-                                    text="Это несущий элемент опалубки перекрытий. С ее помощью строят монолитные перекрытия высотой до 5,5 метров. Телескопические стойки для опалубки удерживают ее в статичном положении."
+                                    text="Это несущий элемент опалубки перекрытий. Телескопические стойки для опалубки удерживают ее в статичном положении."
                                 />
                             </div>
                             <div className={styles.ProductsList}>
@@ -264,7 +267,7 @@ export default function Main() {
                                 <FeedBackBtn
                                     style={null}
                                     header="Струбцина"
-                                    text="Струбцина – это конструкция, которая служит для того чтобы закрепить детали к нужной поверхности или плотно прижать их между собой, например, при сварке либо склеивании."
+                                    text="Струбцина – это конструкция, которая служит для того чтобы закрепить детали к нужной поверхности или плотно прижать их между собой."
                                 />
                             </div>
                             <div className={styles.ProductsList}>
@@ -281,11 +284,10 @@ export default function Main() {
                 <section className={styles.ServicesBlock}>
                     <div className={styles.Wrapper}>
                         <div className={styles.Services} id="services">
-                            <h1>Услуги</h1>
+                            <h1>Доставка</h1>
 
                             <div className={styles.ServicesItem}>
                                 <div className={styles.ServicesDescr}>
-                                    <h2>Доставка</h2>
                                     <p>
                                         Осуществляется по Алматы и всей Алматинской области. <br />
                                         Стоимость доставки от 3000 до 5000 тг.

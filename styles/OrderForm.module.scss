@@ -137,3 +137,61 @@
 .invalid {
     border-color: #b30000 !important;
 }
+
+@media (max-width: 1170px) {
+    .Modal {
+        max-width: 500px;
+        max-height: 800px;
+        padding: 0 1em 1em 1em;
+    }
+}
+
+@media (max-width: 992px) {
+    .Modal {
+        width: 60%;
+    }
+    .ContactForm {
+        padding: 30px;
+        p {
+            margin-bottom: 10px;
+            line-height: 25px;
+        }
+        button {
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .Modal {
+        min-width: 70%;
+    }
+    .ContactForm {
+        padding: 20px;
+        input {
+            padding: 0.5rem;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .Modal {
+        width: 80%;
+    }
+    .ContactForm {
+        h2 {
+            font-size: 1.5em;
+        }
+        p {
+            line-height: 22px;
+            font-size: 0.9em;
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .Modal {
+        width: 90%;
+    }
+}

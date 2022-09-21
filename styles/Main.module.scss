@@ -102,21 +102,32 @@
 }
 
 .OrderBtn {
-    padding: 10px 0 20px 0;
-    border: none;
-    background: inherit;
-    transition: all 0.3s ease;
-    &:hover {
-            transform: scale3d(1.1, 1.1, 1.1);
-        }
+    margin: 0 auto;
 
-        h2, p {
-            line-height: 1.8em;
-            transition: all 0.6s ease;
-            &:hover {
-                color: $color-accent;
-            }
+    h2 {
+        line-height: 1.8em;
+        font-size: 1.5em;
+    }
+    p {
+        margin-bottom: 0.8em;
+        line-height: 1.8em;
+        font-size: 0.95em;
+    }
+    button {
+        background: #3e444f;
+        border: 1px solid #3e444f;
+        padding: 0.7em 1.7em;
+        border-radius: 2px;
+        font-size: 1em;
+        font-weight: 700;
+        color: #F3F3F3;
+        transition: all 0.5s ease;
+        &:hover {
+            background: $color-accent;
+            color: #3e444f;
+            border: 1px solid $color-accent;
         }
+    }
 }
 
 .Main {
@@ -289,11 +300,6 @@
     justify-content: space-between;
     padding: 1.25em;
 
-    h2 {
-        font-weight: 700;
-        font-size: 1.563em;
-    }
-
     p {
         font-weight: 700;
         line-height: 1.563em;
@@ -371,10 +377,8 @@
 
 
     .ServicesDescr {
+        justify-content: space-around;
         padding: 0 1em 0 0;
-        h2 {
-            font-size: 1.4em;
-        }
     }
 }
 
@@ -482,17 +486,6 @@
             margin-bottom: 0;
         }
     }
-    .OrderBtn {
-        p {
-            line-height: 1.4em;
-            font-size: 1em;
-        }
-
-        h2 {
-            font-size: 1.3em;
-            line-height: 1.5em;
-        }
-    }
 }
 
 @media (max-width: 540px) {
@@ -527,6 +520,16 @@
 
     .Logo {
         display: none;
+    }
+
+    .LogoContent {
+        p {
+            font-size: 1.3em;
+        }
+        :nth-child(2) {
+            font-size: 0.65em;
+        }
+        width: 180px;
     }
 
     .FeedBackBtn {

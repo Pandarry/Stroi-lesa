@@ -420,6 +420,12 @@
             font-size: 0.7em;
         }
     }
+    .OrderBtn {
+        h2 {
+            padding: 10px 0 4px 0;
+            line-height: 1.3em;
+        }
+    }
 }
 
 @media (max-width: 640px) {
@@ -484,6 +490,11 @@
         justify-content: center;
         &:last-child {
             margin-bottom: 0;
+        }
+    }
+    .OrderBtn {
+        h2, p {
+            line-height: 1.9em;
         }
     }
 }

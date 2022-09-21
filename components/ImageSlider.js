@@ -1,16 +1,15 @@
 import { useState } from 'react';
-// import Image from 'next/image';
 
 import styles from '/styles/ImageSlider.module.scss';
 
 const SlidesOne = [
     {
-        img: 'https://images.unsplash.com/photo-1601021631769-ae79269abcc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+        img: 'https://images.unsplash.com/photo-1646608220368-c604d8e8130f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80',
         title: 'Строительные леса',
     },
 
     {
-        img: 'https://images.unsplash.com/photo-1635961134620-5da36ab4ad72?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+        img: 'https://www.nhbc.co.uk/binaries/content/gallery/nhbccontentmanagementsystem/house-builder---developer/health-and-safety/hs.jpg',
         title: 'Строительные леса',
     },
 
@@ -23,7 +22,7 @@ const SlidesOne = [
         title: 'Строительные леса',
     },
     {
-        img: 'https://images.unsplash.com/photo-1646608220368-c604d8e8130f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80',
+        img: 'https://cdn.britannica.com/33/118633-050-B3988F27/building.jpg',
         title: 'Строительные леса',
     },
 ];
@@ -160,7 +159,7 @@ export default function ImageSlider({ product }) {
 
                 {SlidesTwo.map((slide, index) => {
                     return (
-                        <div key={index}>
+                        <div key={index} className={styles.ImgBorder}>
                             {index === current2 && (
                                 <img src={slide.img} alt={slide.title} loading="lazy" />
                             )}
@@ -183,7 +182,7 @@ export default function ImageSlider({ product }) {
 
                 {SlidesThree.map((slide, index) => {
                     return (
-                        <div key={index}>
+                        <div key={index} className={styles.ImgBorder}>
                             {index === current3 && (
                                 <img src={slide.img} alt={slide.title} loading="lazy" />
                             )}
@@ -206,7 +205,7 @@ export default function ImageSlider({ product }) {
 
                 {SlidesFour.map((slide, index) => {
                     return (
-                        <div key={index}>
+                        <div key={index} className={styles.ImgBorder}>
                             {index === current4 && (
                                 <img src={slide.img} alt={slide.title} loading="lazy" />
                             )}

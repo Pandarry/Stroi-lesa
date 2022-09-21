@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '/styles/Main.module.scss';
-import styled from '@emotion/styled';
 
 import img from '../public/img/about.jpg';
 import deliveryImg from '../public/img/delivery.jpg';
@@ -90,7 +89,9 @@ export default function Main() {
                 <div className="container-flex">
                     <div className="content-block">
                         <div className={styles.LogoBlock}>
-                            <Image src={logo} width={100} height={66} className="Logo" />
+                            <div className={styles.Logo}>
+                                <Image src={logo} width={100} height={66} />
+                            </div>
 
                             <div className={styles.LogoContent}>
                                 <p>

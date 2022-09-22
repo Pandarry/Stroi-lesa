@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#0078d4" />
         <meta name="title" content="Аренда строительных лесов - Алматы" />
+        <title>Аренда строительных лесов - Алматы</title>
       </Head>
       <Component {...pageProps} />;
     </>

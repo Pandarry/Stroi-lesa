@@ -14,24 +14,17 @@
         width: 38px;
         height: 38px;
         background-color: #fff;
-        border-radius: 38px;
+        border-radius: 50%;
         border: 3px solid $color-accent;
         transition: all 0.3s ease;
-      }
-      
-      button::after {
-        content: "\279C";
-        font-size: 18px;
-        color: $color-accent;
-        transition: all 0.3s ease;
-      }
-      
-      button:hover {
-        border-color: $color-main;
-      }
-      
-      button:hover::after {
-        color: $color-main;
+        &:hover {
+            border-color: $color-main;
+            svg {
+              path {
+                  fill: $color-main;
+              }
+          }
+        }
       }
      
     p {
@@ -66,20 +59,26 @@
     display: flex;
     justify-content: center;
     top: 90%;
+      svg {
+        width: 12px;
+        height: auto;
+        path {
+          fill: $color-accent;
+        }
+      }
 }
 
 .LeftArrow {
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
-    transform: rotate(180deg);
-    margin-right: 0.4em;
+  margin-right: 1em;
+    svg {
+      transform: rotate(90deg);
+    }
 }
 
 .RightArrow {
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
+  svg {
+    transform: rotate(-90deg);
+  }
 }
 
 // @media (max-width: 768px) {

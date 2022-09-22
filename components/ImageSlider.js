@@ -4,30 +4,35 @@ import styles from '/styles/ImageSlider.module.scss';
 
 const SlidesOne = [
     {
-        img: 'https://images.unsplash.com/photo-1646608220368-c604d8e8130f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80',
+        img: 'https://www.barnaul-altai.ru/business/stroyoborud/img/stroyoborudnews16.jpg',
+        title: 'Строительные леса',
+    },
+    {
+        img: 'https://fora-systems.ru/upload/iblock/4da/4da057efe8a005a29e4d42b854560e1d.jpg',
+        title: 'Строительные леса',
+    },
+    {
+        img: 'https://artpodem.ru/sites/default/files/sub-image/img_1210.jpg',
+        title: 'Строительные леса',
+    },
+
+
+    {
+        img: 'https://stroyka.ru/upload/articles/802/03-lesa-stroitelnye-svoimi-rukami-chertezhi-i-foto.jpg',
         title: 'Строительные леса',
     },
 
     {
-        img: 'https://www.nhbc.co.uk/binaries/content/gallery/nhbccontentmanagementsystem/house-builder---developer/health-and-safety/hs.jpg',
-        title: 'Строительные леса',
-    },
-
-    {
-        img: 'http://faqindecor.com/wp-content/uploads/2020/03/2.jpg',
-        title: 'Строительные леса',
-    },
-    {
-        img: 'https://www.zaggo.ru/sas/image/01_briques_de_parement_renovation_facade.jpg',
-        title: 'Строительные леса',
-    },
-    {
-        img: 'https://cdn.britannica.com/33/118633-050-B3988F27/building.jpg',
+        img: 'https://stroyka.ru/upload/articles/802/04-lesa-stroitelnye-svoimi-rukami-chertezhi-i-foto.jpg',
         title: 'Строительные леса',
     },
 ];
 
 const SlidesTwo = [
+    {
+        img: 'https://rsk-spb.com/upload/medialibrary/f7b/f7bbe412c7f51d9a0743263eb3cb7d3f.jpg',
+        title: 'Телескопические стойки',
+    },
     {
         img: 'https://st38.stblizko.ru/images/product/318/367/946_original.jpg',
         title: 'Телескопические стойки',
@@ -36,10 +41,7 @@ const SlidesTwo = [
         img: 'https://prokat-instrumenta.kz/wp-content/uploads/2016/02/arenda-teleskopichekoj-stojki.jpeg',
         title: 'Телескопические стойки',
     },
-    {
-        img: 'https://rsk-spb.com/upload/medialibrary/f7b/f7bbe412c7f51d9a0743263eb3cb7d3f.jpg',
-        title: 'Телескопические стойки',
-    },
+
     {
         img: 'https://stremyanki.kz/wp-content/uploads/2021/11/001x400-400x400.jpg',
         title: 'Телескопические стойки',
@@ -109,6 +111,14 @@ export default function ImageSlider({ product }) {
         setCurrent2(current2 === 0 ? length2 - 1 : current2 - 1);
     };
 
+    function Arrow() {
+        return(
+        <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fillRule="evenodd" clipRule="evenodd" d="M0.613904 0.542791L0 1.07801L2.24998 3.03901L4.49996 5L6.74998 3.03898L9 1.07795L8.38159 0.538984L7.76317 0L6.13157 1.42198L4.49996 2.84396L2.87271 1.42577C1.97772 0.645774 1.24148 0.00758425 1.23663 0.00758425C1.23177 0.00758425 0.951541 0.248429 0.613904 0.542791Z" fill="#B0B6C1" />
+        </svg>
+        )
+    }
+
     if (product == 'lesa') {
         return (
           
@@ -128,9 +138,13 @@ export default function ImageSlider({ product }) {
                         </div>
                     );
                 })}
-                <div className={styles.Arrow}>
-                    <button onClick={prevSlide} className={styles.LeftArrow}></button>
-                    <button onClick={nextSlide} className={styles.RightArrow}></button>
+                <div className={styles.Arrow} >
+                    <button onClick={prevSlide} className={styles.LeftArrow}>
+                        <Arrow />
+                    </button>
+                    <button onClick={nextSlide} className={styles.RightArrow} >
+                        <Arrow />
+                    </button>
                 </div>
             </div>
           
@@ -155,8 +169,8 @@ export default function ImageSlider({ product }) {
                     );
                 })}
                 <div className={styles.Arrow}>
-                    <button onClick={prevSlide2} className={styles.LeftArrow}></button>
-                    <button onClick={nextSlide2} className={styles.RightArrow}></button>
+                    <button onClick={prevSlide2} className={styles.LeftArrow}><Arrow/></button>
+                    <button onClick={nextSlide2} className={styles.RightArrow}><Arrow/></button>
                 </div>
             </div>
         );

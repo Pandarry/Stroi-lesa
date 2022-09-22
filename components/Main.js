@@ -37,7 +37,7 @@ export default function Main() {
     function FeedBackBtn({ style, title, header, text, children }) {
         if (style) {
             return (
-                <button onClick={clickHandler} className={styles.FeedBackBtn}>
+                <button onClick={clickHandler} className={`${styles.FeedBackBtn} ${styles.DeliveryBtn}`}>
                     {title}
                 </button>
             );
@@ -237,7 +237,7 @@ export default function Main() {
                                 <FeedBackBtn
                                     style={null}
                                     header="Строительные леса"
-                                    text="Это профессиональное оборудование, которое используется рабочими для возведения стен или их покраски, ремонта, установки, штукатурки."
+                                    text="Это профессиональное оборудование, которое используется рабочими для возведения стен или их покраски, ремонта, установки, штукатурки и прочих высотных работ."
                                 />
                             </div>
                             <div className={styles.ProductsList}>

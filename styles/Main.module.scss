@@ -306,6 +306,13 @@
         line-height: 1.563em;
     }
 
+    ul {
+        p {
+            margin-bottom: 0.3em;
+            font-size: 1.1em;
+        }
+    }
+
     li {
         color: #3e444f ;
         list-style: inside;
@@ -376,6 +383,33 @@
         width: 70%;
     }
 
+    .Products {
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 1.8em;
+    }
+    .ProductsList {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .OrderBtn {
+        width: 76vw;
+        max-width: 90vw;
+        margin: 0 auto;
+ 
+        h3, p {
+            line-height: 1.9em;
+        }
+        h3 {
+            padding: 10px 0 4px 0;
+            line-height: 1.3em;
+        }
+    }
+
 
     .ServicesDescr {
         justify-content: space-around;
@@ -387,6 +421,12 @@
     .FeedBackBtn {
         padding: 1.1em 1.2em;
         font-size: 0.7em;
+    }
+
+    .DeliveryBtn {
+        border: 2px solid #c8a35e;
+        padding: 0.7em 1.7em;
+        font-size: 1em;
     }
 
     .Social {
@@ -406,10 +446,21 @@
         width: 75%;
     }
 
+    .OrderBtn {
+        width: 100%;
+    }
+
     .ServicesDescr {
         p, li {
             font-size: 0.9em;
         }
+        ul {
+            p {
+                line-height: 1.3em;
+                font-size: 1em;
+            }
+        }
+
     }
 
     .LogoContent {
@@ -419,29 +470,6 @@
         }
         :nth-child(2) {
             font-size: 0.7em;
-        }
-    }
-    .Products {
-        flex-direction: column;
-        justify-content: center;
-        padding-top: 1.8em;
-    }
-    .ProductsList {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-    .OrderBtn {
- 
-        h3, p {
-            line-height: 1.9em;
-        }
-        h3 {
-            padding: 10px 0 4px 0;
-            line-height: 1.3em;
         }
     }
 }
@@ -497,7 +525,7 @@
         }
     }
     .OrderBtn {
-        padding: 0;
+        width: 100%;
         margin: 0 auto;
     }
 
@@ -551,6 +579,12 @@
     .FeedBackBtn {
         padding: 0.9em 1em;
         font-size: 0.6em;
+    }
+
+    .DeliveryBtn {
+        border: 2px solid #c8a35e;
+        padding: 0.7em 1.7em;
+        font-size: 1em;
     }
 
 }

@@ -45,7 +45,7 @@ export default function Main() {
             return (
                 <div className={styles.OrderBtn}>
                     <div className={styles.OrderBtnContent}>
-                        <h2>{header}</h2>
+                        <h3>{header}</h3>
                         <p>{text}</p>
                     </div>
                     <button onClick={clickHandler}>Оставить заявку</button>
@@ -86,7 +86,7 @@ export default function Main() {
                                 <p>
                                     <span>ИП</span> Кайрат
                                 </p>
-                                <p>АРЕНДА СТРОИТЕЛЬНЫХ ЛЕСОВ</p>
+                                <h1>АРЕНДА СТРОИТЕЛЬНЫХ ЛЕСОВ</h1>
                             </div>
                         </div>
 
@@ -146,7 +146,7 @@ export default function Main() {
             <main className={styles.Main}>
                 <section className={styles.CompanyBlock} id="about">
                     <div className={styles.Wrapper}>
-                        <h1>О Компании</h1>
+                        <h2>О Компании</h2>
                         <div className={styles.AboutCompany}>
                             <p>
                                 &nbsp;&nbsp;&nbsp;С 2016 года предоставляем нашим клиентам
@@ -230,7 +230,7 @@ export default function Main() {
 
                 <section className={styles.ProductsBlock} id="products">
                     <div className={styles.Wrapper}>
-                        <h1>Товары</h1>
+                        <h2>Товары</h2>
                         <div className={styles.Products}>
                             <div className={styles.ProductsList}>
                                 <ImageSlider product="lesa" />
@@ -254,7 +254,7 @@ export default function Main() {
                 <section className={styles.ServicesBlock}>
                     <div className={styles.Wrapper}>
                         <div className={styles.Services} id="services">
-                            <h1>Доставка</h1>
+                            <h2>Доставка</h2>
 
                             <div className={styles.ServicesItem}>
                                 <div className={styles.ServicesDescr}>

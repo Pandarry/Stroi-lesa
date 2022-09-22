@@ -5,6 +5,7 @@
     position: relative;
     display: flex;
     justify-content: center;
+    margin-bottom: 1em;
 
     button {
         display: flex;
@@ -51,7 +52,7 @@
 
 .ImgBorder {
     width: max-content;
-    height: 400px;
+    height: 500px;
 
 
     img {

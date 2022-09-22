@@ -50,51 +50,48 @@ const SlidesTwo = [
     },
 ];
 
-const SlidesThree = [
-    {
-        img: 'https://m.media-amazon.com/images/I/61uODylK5cL.jpg',
-        title: 'Струбцина',
-    },
-    {
-        img: 'https://frankfurt.apollo.olxcdn.com/v1/files/rbhgkbcbssuq1-KZ/image;s=644x461',
-        title: 'Струбцина',
-    },
-    {
-        img: 'https://moiinstrumentu.ru/wp-content/uploads/2020/08/strubczina-dlya-opalubki.jpg',
-        title: 'Струбцина',
-    },
+// const SlidesThree = [
+//     {
+//         img: 'https://m.media-amazon.com/images/I/61uODylK5cL.jpg',
+//         title: 'Струбцина',
+//     },
+//     {
+//         img: 'https://frankfurt.apollo.olxcdn.com/v1/files/rbhgkbcbssuq1-KZ/image;s=644x461',
+//         title: 'Струбцина',
+//     },
+//     {
+//         img: 'https://moiinstrumentu.ru/wp-content/uploads/2020/08/strubczina-dlya-opalubki.jpg',
+//         title: 'Струбцина',
+//     },
 
-    {
-        img: 'https://empire-s3-production.bobvila.com/slides/6650/widened/slide1.jpg?1591211631',
-        title: 'Струбцина',
-    },
-];
+//     {
+//         img: 'https://empire-s3-production.bobvila.com/slides/6650/widened/slide1.jpg?1591211631',
+//         title: 'Струбцина',
+//     },
+// ];
 
-const SlidesFour = [
-    {
-        img: 'https://lirp.cdn-website.com/fad38f86/dms3rep/multi/opt/Foundation+Jacks-640w.jpg',
-        title: 'Домкрат',
-    },
-    {
-        img: 'https://i.pinimg.com/564x/dc/83/a9/dc83a988dc2c217de7b5e4eb6bb81c6f.jpg',
-        title: 'Домкрат',
-    },
+// const SlidesFour = [
+//     {
+//         img: 'https://lirp.cdn-website.com/fad38f86/dms3rep/multi/opt/Foundation+Jacks-640w.jpg',
+//         title: 'Домкрат',
+//     },
+//     {
+//         img: 'https://i.pinimg.com/564x/dc/83/a9/dc83a988dc2c217de7b5e4eb6bb81c6f.jpg',
+//         title: 'Домкрат',
+//     },
 
-    {
-        img: 'https://ae04.alicdn.com/kf/Hec2eea6a1d80456db91b1388d099f2ddM/3-1-5.jpg',
-        title: 'Домкрат',
-    },
-];
+//     {
+//         img: 'https://ae04.alicdn.com/kf/Hec2eea6a1d80456db91b1388d099f2ddM/3-1-5.jpg',
+//         title: 'Домкрат',
+//     },
+// ];
 
 export default function ImageSlider({ product }) {
     const [current, setCurrent] = useState(0);
     const [current2, setCurrent2] = useState(0);
-    const [current3, setCurrent3] = useState(0);
-    const [current4, setCurrent4] = useState(0);
+
     const length = SlidesOne.length;
     const length2 = SlidesTwo.length;
-    const length3 = SlidesThree.length;
-    const length4 = SlidesFour.length;
 
     const nextSlide = () => {
         setCurrent(current === length - 1 ? 0 : current + 1);
@@ -110,22 +107,6 @@ export default function ImageSlider({ product }) {
 
     const prevSlide2 = () => {
         setCurrent2(current2 === 0 ? length2 - 1 : current2 - 1);
-    };
-
-    const nextSlide3 = () => {
-        setCurrent3(current3 === length3 - 1 ? 0 : current3 + 1);
-    };
-
-    const prevSlide3 = () => {
-        setCurrent3(current3 === 0 ? length3 - 1 : current3 - 1);
-    };
-
-    const nextSlide4 = () => {
-        setCurrent4(current4 === length4 - 1 ? 0 : current4 + 1);
-    };
-
-    const prevSlide4 = () => {
-        setCurrent4(current4 === 0 ? length4 - 1 : current4 - 1);
     };
 
     if (product == 'lesa') {
@@ -176,54 +157,6 @@ export default function ImageSlider({ product }) {
                 <div className={styles.Arrow}>
                     <button onClick={prevSlide2} className={styles.LeftArrow}></button>
                     <button onClick={nextSlide2} className={styles.RightArrow}></button>
-                </div>
-            </div>
-        );
-    }
-    if (product == 'strubtsina') {
-        return (
-            <div className={styles.ImageSlider}>
-                {SlidesThree.map((slide, index) => {
-                    return (
-                        <div key={index} className={styles.ImgBorder}>
-                            {index === current3 && (
-                                <img src={slide.img} alt={slide.title} loading="lazy" />
-                            )}
-                            {index === current3 && (
-                                <div className={styles.TextOverImg}>
-                                    <p>{slide.title}</p>
-                                </div>
-                            )}
-                        </div>
-                    );
-                })}
-                <div className={styles.Arrow}>
-                    <button onClick={prevSlide3} className={styles.LeftArrow}></button>
-                    <button onClick={nextSlide3} className={styles.RightArrow}></button>
-                </div>
-            </div>
-        );
-    }
-    if (product == 'domkraty') {
-        return (
-            <div className={styles.ImageSlider}>
-                {SlidesFour.map((slide, index) => {
-                    return (
-                        <div key={index} className={styles.ImgBorder}>
-                            {index === current4 && (
-                                <img src={slide.img} alt={slide.title} loading="lazy" />
-                            )}
-                            {index === current4 && (
-                                <div className={styles.TextOverImg}>
-                                    <p>{slide.title}</p>
-                                </div>
-                            )}
-                        </div>
-                    );
-                })}
-                <div className={styles.Arrow}>
-                    <button onClick={prevSlide4} className={styles.LeftArrow}></button>
-                    <button onClick={nextSlide4} className={styles.RightArrow}></button>
                 </div>
             </div>
         );

@@ -88,7 +88,6 @@ export default function FeedBackForm({ showForm, clickHandler, orderData }) {
 
     const sendMail = async (e) => {
         e.preventDefault();
-        console.log(contactName + ' ' + contactDetail + ' ' + checked);
 
         if (isFormValid) {
             axios

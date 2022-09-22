@@ -7,14 +7,14 @@ export default function SendMail(req, res) {
         port: 465,
         host: 'smtp.mail.ru',
         auth: {
-            user: 'mr.zxc1992@bk.ru',
-            pass: 'sxVgr7ncdda8UmRZe9x6',
+            user: process.env.EMAIL,
+            pass: process.env.EMAIL_PASSWORD,
         },
     });
 
     const mailOption = {
-        from: 'mr.zxc1992@bk.ru',
-        to: 'dchtole@gmail.com',
+        from: process.env.EMAIL,
+        to: process.env.SEND_TO,
         subject: 'Заявка на консультацию',
         text: `
         Имя: ${contactName}
